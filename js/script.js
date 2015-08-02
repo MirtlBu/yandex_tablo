@@ -1,36 +1,25 @@
 (function() {
-    var sticky = document.getElementsByClassName('flight__header')[0];
-    var stickyParent = sticky.parentNode;
-    var stickyPosTop = sticky.getBoundingClientRect().top;//положение заголовка по высоте
-    var thList = document.getElementsByClassName('flight__th');
-    var tdList = Array.prototype.slice.call(document.getElementsByClassName('flight__td'), 0, 7);
-    var thWidth = [];
+    var sticky = document.getElementsByClassName('flight__table--header')[0]; //получаем заголовок
+    var stickySibling = document.getElementsByClassName('flight__table--body')[0]; //следующий за ним элемент
+    var stickyPosTop = sticky.getBoundingClientRect().top; //положение заголовка по высоте
 
-    //список ширины всех ячеек в заголовке
-    // Array.prototype.forEach.call(thList, function(v, i) {
-    //     thWidth.push(v.getBoundingClientRect().width);
-    // });
 
-    // function setWidth() {
-    //     Array.prototype.forEach.call(thList, function(v, i) {
-    //         v.setAttribute('style','width:' + thWidth[i] + 'px');
-    //     });
-    //     Array.prototype.forEach.call(tdList, function(v, i) {
-    //         v.setAttribute('style','width:' + thWidth[i] + 'px');
-    //     });
-    // }
+    window.addEventListener('scroll', function() {
+        // var scrollWindow1  = window.pageYOffset;
+        var scrollWindow  = document.body.scrollTop;//на столько проскроллилось
+        var stickyWidth = sticky.getBoundingClientRect().width; //текущая ширина заголовка
 
-    // window.addEventListener('scroll', function() {
-    //     var scrollWindow  = window.pageYOffset;//на столько проскроллилось
-    //     if(scrollWindow >= stickyPosTop) {
-    //         stickyParent.setAttribute('style','margin-top:' + tdList[0].getBoundingClientRect().height + 'px');
-    //         sticky.className = 'flight__tr fixed';
-    //     }
-    //     else {
-    //         stickyParent.removeAttribute('style');
-    //         sticky.className = 'flight__tr';
-    //     }
-    // });
+        if(scrollWindow >= stickyPosTop) { //если высота проскролленого больше или равна высоте положения заголовка
+            stickySibling.setAttribute('style','transform: translateY(' + sticky.getBoundingClientRect().height + 'px)'); //сдвигаем соседа на высоту заголовка, чтобы не прыгал
+            sticky.className = 'flight__table flight__table--header fixed'; //вешаем на загловок класс, который изменяет его позицию на fixed
+            sticky.setAttribute('style','width:' + stickyWidth + 'px'); //задаем заголовку старую ширину, потому что он выпал из контекста из-за fixed
+
+        }
+        else { //возвращаем все назад
+            stickySibling.removeAttribute('style');
+            sticky.className = 'flight__table flight__table--header';
+        }
+    });
 
     var dataAttr = {};
 
