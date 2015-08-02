@@ -79,34 +79,36 @@
             </label>
 
             <div class="flight departures">
-                <div class="flight__table">
-                    <div class="tr flight__tr flight__header">
-                        <div class="flight__tcell flight__th plane-departures">
+                <div class="flight__table flight__table--header">
+                    <div class="flight__tr">
+                        <div class="flight__tcell flight__th flight__tcell--time">
                             <span class="flight__content">Time</span>
                         </div>
-                        <div class="flight__tcell flight__th">
+                        <div class="flight__tcell flight__th flight__tcell--city">
                             <span class="flight__content" title-short>Dest.</span>
                             <span class="flight__content" title-wide>Destination</span>
                         </div>
-                        <div class="flight__tcell flight__th">
+                        <div class="flight__tcell flight__th flight__tcell--airline">
                             <span class="flight__content" title-short>Airl.</span>
                             <span class="flight__content" title-wide>Airline</span>
                         </div>
-                        <div class="flight__tcell flight__th">
+                        <div class="flight__tcell flight__th flight__tcell--flight">
                             <span class="flight__content">Flight</span>
                         </div>
-                        <div class="flight__tcell flight__th">
+                        <div class="flight__tcell flight__th flight__tcell--plane">
                             <span class="flight__content" title-short>Airp.</span>
                             <span class="flight__content" title-wide>Airplane</span>
                         </div>
-                        <div class="flight__tcell flight__th">
+                        <div class="flight__tcell flight__th flight__tcell--status">
                             <span class="flight__content">Status</span>
                         </div>
-                        <div class="flight__tcell flight__th">
+                        <div class="flight__tcell flight__th flight__tcell--extra">
                             <span class="flight__content" title-short>Ext.</span>
                             <span class="flight__content" title-wide>Extra</span>
                         </div>
                     </div>
+                </div>
+                <div class="flight__table flight__table--body">
 
                     <?php
                         $airlines = [
@@ -149,11 +151,16 @@
                             ["14:15", "Berlin", "TXL", "klm", "K4501", "B700", "Boeing 700-333", "delayed", "-"],
                             ["14:25", "Rom", "CIA", "alitalia", "A1315", "A319", "Airbus 319", "cancelled", "-"],
                             ["14:35", "Paris", "CDG", "aeroflot", "A2513", "B737", "Boeing 737-800", "delayed", "airfrance"],
+                            ["14:45", "Moscow", "SVO", "aeroflot", "A4720", "B700", "Boeing 700-333", "delayed", "-"],
+                            ["13:55", "Paris", "CDG", "airfrance", "A3750", "B700", "Boeing 700-333", "checkin", "-"],
+                            ["14:05", "Barcelona", "BCN", "aeroflot", "A7816", "B333", "Boeing 333-600", "delayed", "-"],
+                            ["14:15", "Berlin", "TXL", "klm", "K4501", "B700", "Boeing 700-333", "delayed", "-"],
+                            ["14:25", "Rom", "CIA", "alitalia", "A1315", "A319", "Airbus 319", "cancelled", "-"],
+                            ["14:35", "Paris", "CDG", "aeroflot", "A2513", "B737", "Boeing 737-800", "delayed", "airfrance"],
                             ["14:45", "Moscow", "SVO", "aeroflot", "A4720", "B700", "Boeing 700-333", "delayed", "-"]
                         ];
                         $dataAttr = ['time','city', 'airport', 'airline', 'flight', 'model', 'plane', 'status', 'extra', 'url'];
-                        $openTagTd = '<div class="flight__tcell flight__td">';
-                        $closeTagTd = "</div>";
+                        $cellClass = "flight__tcell flight__td";
                         $contentClass = "flight__content";
                         $imgSize = 'width="20" height="20"';
                     ?>
@@ -161,39 +168,39 @@
                     <?php foreach ($row as $key => $value) { ?>
                         <div class="flight__tr">
 
-                            <?php echo $openTagTd ?>
+                            <div class="<?php echo $cellClass . ' flight__tcell--' . $dataAttr[0]?>">
                                 <span class="<?php echo $contentClass ?>" data-<?php echo $dataAttr[0] ?>="<?php echo $value[0] ?>" ><?php echo $value[0] ?></span>
-                            <?php echo $closeTagTd ?>
+                            </div>
 
-                            <?php echo $openTagTd ?>
+                            <div class="<?php echo $cellClass . ' flight__tcell--' . $dataAttr[1]?>">
                                 <span class="<?php echo $contentClass ?>" data-<?php echo $dataAttr[1] ?>="<?php echo $value[1] ?>"><?php echo $value[1] ?></span>
                                 <span class="<?php echo $contentClass ?>" data-<?php echo $dataAttr[2] ?>="<?php echo $value[2] ?>"><?php echo $value[2] ?></span>
-                            <?php echo $closeTagTd ?>
+                            </div>
 
-                            <?php echo $openTagTd ?>
+                            <div class="<?php echo $cellClass . ' flight__tcell--' . $dataAttr[3]?>">
                                 <img class="<?php echo $contentClass ?>" data-<?php echo $dataAttr[9] ?>="images/icon-airlines-<?php echo $value[3] ?>.png" src="images/icon-airlines-<?php echo $value[3] ?>.png" alt="<?php echo $airlines[$value[3]] ?>" <?php echo $imgSize ?> >
                                 <span class="<?php echo $contentClass ?>" data-<?php echo $dataAttr[3] ?>="<?php echo $value[3] ?>"><?php echo $airlines[$value[3]] ?></span>
-                            <?php echo $closeTagTd ?>
+                            </div>
 
-                            <?php echo $openTagTd ?>
+                            <div class="<?php echo $cellClass . ' flight__tcell--' . $dataAttr[4]?>">
                                 <span class="<?php echo $contentClass ?>" data-<?php echo $dataAttr[4] ?>="<?php echo $value[4] ?>"><?php echo $value[4] ?></span>
-                            <?php echo $closeTagTd ?>
+                            </div>
 
-                            <?php echo $openTagTd ?>
+                            <div class="<?php echo $cellClass . ' flight__tcell--' . $dataAttr[6]?>">
                                 <span class="<?php echo $contentClass ?>" data-<?php echo $dataAttr[5] ?>="<?php echo $value[5] ?>"><?php echo $value[5] ?></span>
                                 <span class="<?php echo $contentClass ?>" data-<?php echo $dataAttr[6] ?>="<?php echo $value[6] ?>"><?php echo $value[6] ?></span>
-                            <?php echo $closeTagTd ?>
+                            </div>
 
-                            <?php echo $openTagTd ?>
+                            <div class="<?php echo $cellClass . ' flight__tcell--' . $dataAttr[7]?>">
                                 <span class="<?php echo $contentClass ?>" data-<?php echo $dataAttr[7] ?>="<?php echo $value[7] ?>"><?php echo $status[$value[7]] ?></span>
-                            <?php echo $closeTagTd ?>
+                            </div>
 
-                            <?php echo $openTagTd ?>
+                            <div class="<?php echo $cellClass . ' flight__tcell--' . $dataAttr[8]?>">
                                 <?php if($airlines[$value[8]]) { ?>
                                     <img class="<?php echo $contentClass ?>" data-<?php echo $dataAttr[9] ?>="images/icon-airlines-<?php echo $value[8] ?>.png" src="images/icon-airlines-<?php echo $value[8] ?>.png" alt="<?php echo $airlines[$value[8]] ?>" <?php echo $imgSize ?> >
                                 <?php } ?>
                                 <span class="<?php echo $contentClass ?>" data-<?php echo $dataAttr[8] ?>="<?php echo $value[8] ?>"><?php echo $airlines[$value[8]] ? $airlines[$value[8]] : $value[8] ?></span>
-                            <?php echo $closeTagTd ?>
+                            </div>
                         </div>
                     <?php } ?>
                 </div>

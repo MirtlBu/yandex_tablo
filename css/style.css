@@ -130,7 +130,6 @@ h1, h2 {
 .flight__tr {
     display: table-row;
     position: relative;
-    top: 0;
 }
 
 .flight__tr:nth-child(even) {
@@ -138,7 +137,6 @@ h1, h2 {
 }
 
 .flight__tr:hover .flight__td {
-    /*background: rgba(255, 255, 153, .2);*/
     background: rgba(255, 0, 0, .2);
 }
 
@@ -147,19 +145,18 @@ h1, h2 {
     padding: 5px;
     box-sizing: border-box;
     position: relative;
+    font-size: .875em;
     white-space: nowrap;
 }
 
 .flight__th {
-    font-size: .875em;
     color: #ffffff;
     font-weight: 400;
-    background: #1e1e1e;
+    background: #272727;
     z-index: 1;
 }
 
 .flight__td {
-    font-size: 1em;
     color: #ffff99;
     font-weight: 100;
     cursor: pointer;
@@ -172,7 +169,6 @@ h1, h2 {
     height: 10000px;
     left: 0;
     top: -5000px;
-    /*background: rgba(255, 255, 153, .2);*/
     background: rgba(0, 120, 40, .2);
     z-index: -1;
 }
@@ -187,6 +183,34 @@ h1, h2 {
 
 [data-url] {
     margin-right: 5px;
+}
+
+.flight__tcell--time {
+    width: 15%;
+}
+
+.flight__tcell--city {
+    width: 15%;
+}
+
+.flight__tcell--airline {
+    width: 15%;
+}
+
+.flight__tcell--flight {
+    width: 15%;
+}
+
+.flight__tcell--plane {
+    width: 15%;
+}
+
+.flight__tcell--status {
+    width: 20%;
+}
+
+.flight__tcell--extra {
+    width: 15%;
 }
 
 .popup__wrap {
@@ -260,6 +284,7 @@ h1, h2 {
 .fixed {
     position: fixed;
     z-index: 1;
+    top: 0;
 }
 
 @media (min-width: 640px) {
@@ -267,21 +292,21 @@ h1, h2 {
     .flight__tcell {
         text-transform: uppercase;
     }
-
-    .flight__tcell {
-        padding: 5px 10px;
-    }
 }
 
 @media (min-width: 768px) {
+
+    .container {
+        padding: 0 25px;
+    }
 
     .header h1 {
         margin: 25px 0;
         font-size: 40px;
     }
 
-    .flight__td {
-        font-size: .8em;
+    .flight__tcell {
+        padding: 10px;
     }
 
     [data-city], [data-airline], [data-plane], [data-extra], [title-wide] {
@@ -299,13 +324,40 @@ h1, h2 {
     [data-airport]:after {
         content: ')';
     }
+
+    .flight__tcell--time {
+        width: 5%;
+    }
+
+    .flight__tcell--city {
+        width: 20%;
+    }
+
+    .flight__tcell--airline {
+        width: 18%;
+    }
+
+    .flight__tcell--flight {
+        width: 7%;
+    }
+
+    .flight__tcell--plane {
+        width: 17%;
+    }
+
+    .flight__tcell--status {
+        width: 15%;
+    }
+
+    .flight__tcell--extra {
+        width: 18%;
+    }
 }
 
 @media (min-width: 1000px) {
 
     .container {
         width: 1000px;
-        padding: 0 25px;
     }
 
     .main {
@@ -313,7 +365,7 @@ h1, h2 {
     }
 
     .flight__tcell {
-        padding: 15px 25px;
+        padding: 10px 20px;
     }
 
     .plane-departures:before, .plane-arrivals:before {
