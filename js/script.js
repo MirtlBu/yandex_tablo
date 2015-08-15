@@ -1,8 +1,7 @@
-(function() {
+window.onload = function() {
+    window.scrollTo(0, 0);
     var sticky = document.getElementsByClassName('flight__table--header')[0]; //получаем заголовок
-    var stickySibling = document.getElementsByClassName('flight__table--body')[0]; //следующий за ним элемент
     var stickyPosTop = sticky.getBoundingClientRect().top; //положение заголовка по высоте
-
 
     window.addEventListener('scroll', function() {
         // var scrollWindow1  = window.pageYOffset;
@@ -10,13 +9,10 @@
         var stickyWidth = sticky.getBoundingClientRect().width; //текущая ширина заголовка
 
         if(scrollWindow >= stickyPosTop) { //если высота проскролленого больше или равна высоте положения заголовка
-            stickySibling.setAttribute('style','transform: translateY(' + sticky.getBoundingClientRect().height + 'px)'); //сдвигаем соседа на высоту заголовка, чтобы не прыгал
             sticky.className = 'flight__table flight__table--header fixed'; //вешаем на загловок класс, который изменяет его позицию на fixed
             sticky.setAttribute('style','width:' + stickyWidth + 'px'); //задаем заголовку старую ширину, потому что он выпал из контекста из-за fixed
-
         }
         else { //возвращаем все назад
-            stickySibling.removeAttribute('style');
             sticky.className = 'flight__table flight__table--header';
         }
     });
@@ -61,4 +57,4 @@
         document.getElementById('popup').className = 'popup';
     });
 
-})();
+};

@@ -1,0 +1,1492 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Airport tablo</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,700,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="popup__wrap">
+        <div class="popup" id="popup">
+            <div class="popup__table">
+                <div class="popup__close" id="popup-close">&#10005;</div>
+                <div class="popup__tr">
+                    <div class="popup__tcell popup__title">Time:</div>
+                    <div class="popup__tcell popup__content">
+                        <span class="popup__text" data="time"></span>
+                    </div>
+                </div>
+                <div class="popup__tr">
+                    <div class="popup__tcell popup__title">Destination:</div>
+                    <div class="popup__tcell popup__content">
+                        <span class="popup__text" data="city"></span>
+                        <span class="popup__text" data="airport"></span>
+                    </div>
+                </div>
+                <div class="popup__tr">
+                    <div class="popup__tcell popup__title">Airline:</div>
+                    <div class="popup__tcell popup__content">
+                        <img class="popup__img">
+                        <span class="popup__text" data="airline"></span>
+                    </div>
+                </div>
+                <div class="popup__tr">
+                    <div class="popup__tcell popup__title">Flight:</div>
+                    <div class="popup__tcell popup__content">
+                        <span class="popup__text" data="flight"></span>
+                    </div>
+                </div>
+                <div class="popup__tr">
+                    <div class="popup__tcell popup__title">Airplane:</div>
+                    <div class="popup__tcell popup__content">
+                        <span class="popup__text" data="plane"></span>
+                    </div>
+                </div>
+                <div class="popup__tr">
+                    <div class="popup__tcell popup__title">Status:</div>
+                    <div class="popup__tcell popup__content">
+                        <span class="popup__text" data="status"></span>
+                    </div>
+                </div>
+                <div class="popup__tr">
+                    <div class="popup__tcell popup__title">Extra:</div>
+                    <div class="popup__tcell popup__content">
+                        <span class="popup__text" data="extra"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>Mirtl Bu airport</h1>
+        </div>
+
+        <div class="main">
+
+            <input type="radio" name="flight" id="departures" class="switcher-input" checked>
+            <label for="departures" class="switcher-title ">
+                <span class="switcher-title__text">Departures</span>
+            </label>
+
+            <input type="radio" name="flight" id="arrivals" class="switcher-input">
+            <label for="arrivals" class="switcher-title">
+                <span class="switcher-title__text">Arrivals</span>
+            </label>
+            <div class="flight__table flight__table--header">
+                <div class="flight__tr">
+                    <div class="flight__tcell flight__th flight__tcell--time">
+                        <span class="flight__content">Time</span>
+                    </div>
+                    <div class="flight__tcell flight__th flight__tcell--city">
+                        <span class="flight__content" title-short>Dest.</span>
+                        <span class="flight__content" title-wide>Destination</span>
+                    </div>
+                    <div class="flight__tcell flight__th flight__tcell--airline">
+                        <span class="flight__content" title-short>Airl.</span>
+                        <span class="flight__content" title-wide>Airline</span>
+                    </div>
+                    <div class="flight__tcell flight__th flight__tcell--flight">
+                        <span class="flight__content">Flight</span>
+                    </div>
+                    <div class="flight__tcell flight__th flight__tcell--plane">
+                        <span class="flight__content" title-short>Airp.</span>
+                        <span class="flight__content" title-wide>Airplane</span>
+                    </div>
+                    <div class="flight__tcell flight__th flight__tcell--status">
+                        <span class="flight__content">Status</span>
+                    </div>
+                    <div class="flight__tcell flight__th flight__tcell--extra">
+                        <span class="flight__content" title-short>Ext.</span>
+                        <span class="flight__content" title-wide>Extra</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flight departures">
+                <div class="flight__table flight__table--body">
+
+
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="13:05" >13:05</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Barcelona">Barcelona</span>
+                            <span class="flight__content" data-airport="BCN">BCN</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A7816">A7816</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B333">B333</span>
+                            <span class="flight__content" data-plane="Boeing 333-600">Boeing 333-600</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="13:15" >13:15</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Rom">Rom</span>
+                            <span class="flight__content" data-airport="CIA">CIA</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-alitalia.png" src="images/icon-airlines-alitalia.png" alt="Alitalia" width="20" height="20" >
+                            <span class="flight__content" data-airline="alitalia">Alitalia</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A1315">A1315</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="A319">A319</span>
+                            <span class="flight__content" data-plane="Airbus 319">Airbus 319</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="departed">Departed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="13:45" >13:45</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Moscow">Moscow</span>
+                            <span class="flight__content" data-airport="SVO">SVO</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A4720">A4720</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="14:35" >14:35</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Geneva">Geneva</span>
+                            <span class="flight__content" data-airport="GVA">GVA</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-swiss.png" src="images/icon-airlines-swiss.png" alt="SWISS" width="20" height="20" >
+                            <span class="flight__content" data-airline="swiss">SWISS</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="S5037">S5037</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="A319">A319</span>
+                            <span class="flight__content" data-plane="Airbus 319">Airbus 319</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="14:45" >14:45</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Paris">Paris</span>
+                            <span class="flight__content" data-airport="CDG">CDG</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A2513">A2513</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B737">B737</span>
+                            <span class="flight__content" data-plane="Boeing 737-800">Boeing 737-800</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="delayed">Delayed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <img class="flight__content" data-url="images/icon-airlines-airfrance.png" src="images/icon-airlines-airfrance.png" alt="Air France" width="20" height="20" >
+                            <span class="flight__content" data-extra="airfrance">Air France</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="14:55" >14:55</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Barcelona">Barcelona</span>
+                            <span class="flight__content" data-airport="BCN">BCN</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A7816">A7816</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B333">B333</span>
+                            <span class="flight__content" data-plane="Boeing 333-600">Boeing 333-600</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="departed">Departed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="15:25" >15:25</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Rom">Rom</span>
+                            <span class="flight__content" data-airport="CIA">CIA</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-alitalia.png" src="images/icon-airlines-alitalia.png" alt="Alitalia" width="20" height="20" >
+                            <span class="flight__content" data-airline="alitalia">Alitalia</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A1315">A1315</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="A319">A319</span>
+                            <span class="flight__content" data-plane="Airbus 319">Airbus 319</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="cancelled">Cancelled</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="15:35" >15:35</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Paris">Paris</span>
+                            <span class="flight__content" data-airport="CDG">CDG</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A2513">A2513</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B737">B737</span>
+                            <span class="flight__content" data-plane="Boeing 737-800">Boeing 737-800</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <img class="flight__content" data-url="images/icon-airlines-airfrance.png" src="images/icon-airlines-airfrance.png" alt="Air France" width="20" height="20" >
+                            <span class="flight__content" data-extra="airfrance">Air France</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="16:15" >16:15</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Berlin">Berlin</span>
+                            <span class="flight__content" data-airport="TXL">TXL</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-klm.png" src="images/icon-airlines-klm.png" alt="KLM" width="20" height="20" >
+                            <span class="flight__content" data-airline="klm">KLM</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="K4501">K4501</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="delayed">Delayed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="16:25" >16:25</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Moscow">Moscow</span>
+                            <span class="flight__content" data-airport="SVO">SVO</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A4720">A4720</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="delayed">Delayed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="16:35" >16:35</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Berlin">Berlin</span>
+                            <span class="flight__content" data-airport="TXL">TXL</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-klm.png" src="images/icon-airlines-klm.png" alt="KLM" width="20" height="20" >
+                            <span class="flight__content" data-airline="klm">KLM</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="K4501">K4501</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="departed">Departed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="16:45" >16:45</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Moscow">Moscow</span>
+                            <span class="flight__content" data-airport="SVO">SVO</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A4720">A4720</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="delayed">Delayed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="16:55" >16:55</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Paris">Paris</span>
+                            <span class="flight__content" data-airport="CDG">CDG</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-airfrance.png" src="images/icon-airlines-airfrance.png" alt="Air France" width="20" height="20" >
+                            <span class="flight__content" data-airline="airfrance">Air France</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A3750">A3750</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="17:25" >17:25</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Rom">Rom</span>
+                            <span class="flight__content" data-airport="CIA">CIA</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-alitalia.png" src="images/icon-airlines-alitalia.png" alt="Alitalia" width="20" height="20" >
+                            <span class="flight__content" data-airline="alitalia">Alitalia</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A1315">A1315</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="A319">A319</span>
+                            <span class="flight__content" data-plane="Airbus 319">Airbus 319</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="cancelled">Cancelled</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="17:45" >17:45</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Paris">Paris</span>
+                            <span class="flight__content" data-airport="CDG">CDG</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-airfrance.png" src="images/icon-airlines-airfrance.png" alt="Air France" width="20" height="20" >
+                            <span class="flight__content" data-airline="airfrance">Air France</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A3750">A3750</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="inair">In Air</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-extra="aeroflot">Aeroflot</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="18:05" >18:05</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Barcelona">Barcelona</span>
+                            <span class="flight__content" data-airport="BCN">BCN</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A7816">A7816</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B333">B333</span>
+                            <span class="flight__content" data-plane="Boeing 333-600">Boeing 333-600</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="delayed">Delayed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="18:25" >18:25</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Rom">Rom</span>
+                            <span class="flight__content" data-airport="CIA">CIA</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-alitalia.png" src="images/icon-airlines-alitalia.png" alt="Alitalia" width="20" height="20" >
+                            <span class="flight__content" data-airline="alitalia">Alitalia</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A1315">A1315</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="A319">A319</span>
+                            <span class="flight__content" data-plane="Airbus 319">Airbus 319</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="cancelled">Cancelled</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="18:30" >18:30</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Barcelona">Barcelona</span>
+                            <span class="flight__content" data-airport="BCN">BCN</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A7816">A7816</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B333">B333</span>
+                            <span class="flight__content" data-plane="Boeing 333-600">Boeing 333-600</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="delayed">Delayed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="18:35" >18:35</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Moscow">Moscow</span>
+                            <span class="flight__content" data-airport="SVO">SVO</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A4720">A4720</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="18:55" >18:55</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Paris">Paris</span>
+                            <span class="flight__content" data-airport="CDG">CDG</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-airfrance.png" src="images/icon-airlines-airfrance.png" alt="Air France" width="20" height="20" >
+                            <span class="flight__content" data-airline="airfrance">Air France</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A3750">A3750</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="19:15" >19:15</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Paris">Paris</span>
+                            <span class="flight__content" data-airport="CDG">CDG</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A2513">A2513</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B737">B737</span>
+                            <span class="flight__content" data-plane="Boeing 737-800">Boeing 737-800</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="delayed">Delayed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <img class="flight__content" data-url="images/icon-airlines-airfrance.png" src="images/icon-airlines-airfrance.png" alt="Air France" width="20" height="20" >
+                            <span class="flight__content" data-extra="airfrance">Air France</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="19:25" >19:25</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Berlin">Berlin</span>
+                            <span class="flight__content" data-airport="TXL">TXL</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-klm.png" src="images/icon-airlines-klm.png" alt="KLM" width="20" height="20" >
+                            <span class="flight__content" data-airline="klm">KLM</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="K4501">K4501</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="delayed">Delayed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="19:35" >19:35</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Paris">Paris</span>
+                            <span class="flight__content" data-airport="CDG">CDG</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-airfrance.png" src="images/icon-airlines-airfrance.png" alt="Air France" width="20" height="20" >
+                            <span class="flight__content" data-airline="airfrance">Air France</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A3750">A3750</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="20:05" >20:05</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Geneva">Geneva</span>
+                            <span class="flight__content" data-airport="GVA">GVA</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-swiss.png" src="images/icon-airlines-swiss.png" alt="SWISS" width="20" height="20" >
+                            <span class="flight__content" data-airline="swiss">SWISS</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="S5037">S5037</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="A319">A319</span>
+                            <span class="flight__content" data-plane="Airbus 319">Airbus 319</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="inair">In Air</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <img class="flight__content" data-url="images/icon-airlines-klm.png" src="images/icon-airlines-klm.png" alt="KLM" width="20" height="20" >
+                            <span class="flight__content" data-extra="klm">KLM</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="20:15" >20:15</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Geneva">Geneva</span>
+                            <span class="flight__content" data-airport="GVA">GVA</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-klm.png" src="images/icon-airlines-klm.png" alt="KLM" width="20" height="20" >
+                            <span class="flight__content" data-airline="klm">KLM</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="K5037">K5037</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="A319">A319</span>
+                            <span class="flight__content" data-plane="Airbus 319">Airbus 319</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="20:25" >20:25</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Berlin">Berlin</span>
+                            <span class="flight__content" data-airport="TXL">TXL</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-klm.png" src="images/icon-airlines-klm.png" alt="KLM" width="20" height="20" >
+                            <span class="flight__content" data-airline="klm">KLM</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="K4501">K4501</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="delayed">Delayed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="20:35" >20:35</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Paris">Paris</span>
+                            <span class="flight__content" data-airport="CDG">CDG</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A2513">A2513</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B737">B737</span>
+                            <span class="flight__content" data-plane="Boeing 737-800">Boeing 737-800</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="delayed">Delayed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <img class="flight__content" data-url="images/icon-airlines-airfrance.png" src="images/icon-airlines-airfrance.png" alt="Air France" width="20" height="20" >
+                            <span class="flight__content" data-extra="airfrance">Air France</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flight arrivals">
+                <div class="flight__table flight__table--body">
+
+
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="12:25" >12:25</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Geneva">Geneva</span>
+                            <span class="flight__content" data-airport="GVA">GVA</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-swiss.png" src="images/icon-airlines-swiss.png" alt="SWISS" width="20" height="20" >
+                            <span class="flight__content" data-airline="swiss">SWISS</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="S5037">S5037</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="A319">A319</span>
+                            <span class="flight__content" data-plane="Airbus 319">Airbus 319</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="inair">In Air</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <img class="flight__content" data-url="images/icon-airlines-klm.png" src="images/icon-airlines-klm.png" alt="KLM" width="20" height="20" >
+                            <span class="flight__content" data-extra="klm">KLM</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="12:45" >12:45</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Paris">Paris</span>
+                            <span class="flight__content" data-airport="CDG">CDG</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-airfrance.png" src="images/icon-airlines-airfrance.png" alt="Air France" width="20" height="20" >
+                            <span class="flight__content" data-airline="airfrance">Air France</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A3750">A3750</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="inair">In Air</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-extra="aeroflot">Aeroflot</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="12:55" >12:55</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Barcelona">Barcelona</span>
+                            <span class="flight__content" data-airport="BCN">BCN</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A7816">A7816</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B333">B333</span>
+                            <span class="flight__content" data-plane="Boeing 333-600">Boeing 333-600</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="departed">Departed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="13:05" >13:05</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Berlin">Berlin</span>
+                            <span class="flight__content" data-airport="TXL">TXL</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-klm.png" src="images/icon-airlines-klm.png" alt="KLM" width="20" height="20" >
+                            <span class="flight__content" data-airline="klm">KLM</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="K4501">K4501</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="departed">Departed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="13:15" >13:15</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Rom">Rom</span>
+                            <span class="flight__content" data-airport="CIA">CIA</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-alitalia.png" src="images/icon-airlines-alitalia.png" alt="Alitalia" width="20" height="20" >
+                            <span class="flight__content" data-airline="alitalia">Alitalia</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A1315">A1315</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="A319">A319</span>
+                            <span class="flight__content" data-plane="Airbus 319">Airbus 319</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="departed">Departed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="13:25" >13:25</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Paris">Paris</span>
+                            <span class="flight__content" data-airport="CDG">CDG</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A2513">A2513</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B737">B737</span>
+                            <span class="flight__content" data-plane="Boeing 737-800">Boeing 737-800</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <img class="flight__content" data-url="images/icon-airlines-airfrance.png" src="images/icon-airlines-airfrance.png" alt="Air France" width="20" height="20" >
+                            <span class="flight__content" data-extra="airfrance">Air France</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="13:35" >13:35</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Moscow">Moscow</span>
+                            <span class="flight__content" data-airport="SVO">SVO</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A4720">A4720</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="13:45" >13:45</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Geneva">Geneva</span>
+                            <span class="flight__content" data-airport="GVA">GVA</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-swiss.png" src="images/icon-airlines-swiss.png" alt="SWISS" width="20" height="20" >
+                            <span class="flight__content" data-airline="swiss">SWISS</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="S5037">S5037</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="A319">A319</span>
+                            <span class="flight__content" data-plane="Airbus 319">Airbus 319</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="13:55" >13:55</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Paris">Paris</span>
+                            <span class="flight__content" data-airport="CDG">CDG</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-airfrance.png" src="images/icon-airlines-airfrance.png" alt="Air France" width="20" height="20" >
+                            <span class="flight__content" data-airline="airfrance">Air France</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A3750">A3750</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="14:05" >14:05</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Barcelona">Barcelona</span>
+                            <span class="flight__content" data-airport="BCN">BCN</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A7816">A7816</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B333">B333</span>
+                            <span class="flight__content" data-plane="Boeing 333-600">Boeing 333-600</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="14:15" >14:15</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Berlin">Berlin</span>
+                            <span class="flight__content" data-airport="TXL">TXL</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-klm.png" src="images/icon-airlines-klm.png" alt="KLM" width="20" height="20" >
+                            <span class="flight__content" data-airline="klm">KLM</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="K4501">K4501</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="delayed">Delayed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="14:25" >14:25</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Rom">Rom</span>
+                            <span class="flight__content" data-airport="CIA">CIA</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-alitalia.png" src="images/icon-airlines-alitalia.png" alt="Alitalia" width="20" height="20" >
+                            <span class="flight__content" data-airline="alitalia">Alitalia</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A1315">A1315</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="A319">A319</span>
+                            <span class="flight__content" data-plane="Airbus 319">Airbus 319</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="cancelled">Cancelled</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="14:35" >14:35</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Paris">Paris</span>
+                            <span class="flight__content" data-airport="CDG">CDG</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A2513">A2513</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B737">B737</span>
+                            <span class="flight__content" data-plane="Boeing 737-800">Boeing 737-800</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="delayed">Delayed</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <img class="flight__content" data-url="images/icon-airlines-airfrance.png" src="images/icon-airlines-airfrance.png" alt="Air France" width="20" height="20" >
+                            <span class="flight__content" data-extra="airfrance">Air France</span>
+                        </div>
+                    </div>
+                    <div class="flight__tr">
+
+                        <div class="flight__tcell flight__td flight__tcell--time">
+                            <span class="flight__content" data-time="14:45" >14:45</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--city">
+                            <span class="flight__content" data-city="Moscow">Moscow</span>
+                            <span class="flight__content" data-airport="SVO">SVO</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--airline">
+                            <img class="flight__content" data-url="images/icon-airlines-aeroflot.png" src="images/icon-airlines-aeroflot.png" alt="Aeroflot" width="20" height="20" >
+                            <span class="flight__content" data-airline="aeroflot">Aeroflot</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--flight">
+                            <span class="flight__content" data-flight="A4720">A4720</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--plane">
+                            <span class="flight__content" data-model="B700">B700</span>
+                            <span class="flight__content" data-plane="Boeing 700-333">Boeing 700-333</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--status">
+                            <span class="flight__content" data-status="checkin">Check-in</span>
+                        </div>
+
+                        <div class="flight__tcell flight__td flight__tcell--extra">
+                            <span class="flight__content" data-extra="-">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

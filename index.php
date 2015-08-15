@@ -77,37 +77,36 @@
             <label for="arrivals" class="switcher-title">
                 <span class="switcher-title__text">Arrivals</span>
             </label>
-
-            <div class="flight departures">
-                <div class="flight__table flight__table--header">
-                    <div class="flight__tr">
-                        <div class="flight__tcell flight__th flight__tcell--time">
-                            <span class="flight__content">Time</span>
-                        </div>
-                        <div class="flight__tcell flight__th flight__tcell--city">
-                            <span class="flight__content" title-short>Dest.</span>
-                            <span class="flight__content" title-wide>Destination</span>
-                        </div>
-                        <div class="flight__tcell flight__th flight__tcell--airline">
-                            <span class="flight__content" title-short>Airl.</span>
-                            <span class="flight__content" title-wide>Airline</span>
-                        </div>
-                        <div class="flight__tcell flight__th flight__tcell--flight">
-                            <span class="flight__content">Flight</span>
-                        </div>
-                        <div class="flight__tcell flight__th flight__tcell--plane">
-                            <span class="flight__content" title-short>Airp.</span>
-                            <span class="flight__content" title-wide>Airplane</span>
-                        </div>
-                        <div class="flight__tcell flight__th flight__tcell--status">
-                            <span class="flight__content">Status</span>
-                        </div>
-                        <div class="flight__tcell flight__th flight__tcell--extra">
-                            <span class="flight__content" title-short>Ext.</span>
-                            <span class="flight__content" title-wide>Extra</span>
-                        </div>
+            <div class="flight__table flight__table--header">
+                <div class="flight__tr">
+                    <div class="flight__tcell flight__th flight__tcell--time">
+                        <span class="flight__content">Time</span>
+                    </div>
+                    <div class="flight__tcell flight__th flight__tcell--city">
+                        <span class="flight__content" title-short>Dest.</span>
+                        <span class="flight__content" title-wide>Destination</span>
+                    </div>
+                    <div class="flight__tcell flight__th flight__tcell--airline">
+                        <span class="flight__content" title-short>Airl.</span>
+                        <span class="flight__content" title-wide>Airline</span>
+                    </div>
+                    <div class="flight__tcell flight__th flight__tcell--flight">
+                        <span class="flight__content">Flight</span>
+                    </div>
+                    <div class="flight__tcell flight__th flight__tcell--plane">
+                        <span class="flight__content" title-short>Airp.</span>
+                        <span class="flight__content" title-wide>Airplane</span>
+                    </div>
+                    <div class="flight__tcell flight__th flight__tcell--status">
+                        <span class="flight__content">Status</span>
+                    </div>
+                    <div class="flight__tcell flight__th flight__tcell--extra">
+                        <span class="flight__content" title-short>Ext.</span>
+                        <span class="flight__content" title-wide>Extra</span>
                     </div>
                 </div>
+            </div>
+            <div class="flight departures">
                 <div class="flight__table flight__table--body">
 
                     <?php
@@ -131,33 +130,33 @@
                             "delayed" => "Delayed"
                         ];
                         $row = [
-                            ["12:25", "Geneva", "GVA", "swiss", "S5037", "A319", "Airbus 319", "inair", "klm"],
-                            ["12:45", "Paris", "CDG", "airfrance", "A3750", "B700", "Boeing 700-333", "inair", "aeroflot"],
-                            ["12:55", "Barcelona", "BCN", "aeroflot", "A7816", "B333", "Boeing 333-600", "departed", "-"],
-                            ["13:05", "Berlin", "TXL", "klm", "K4501", "B700", "Boeing 700-333", "departed", "-"],
-                            ["13:15", "Rom", "CIA", "alitalia", "A1315", "A319", "Airbus 319", "departed", "-"],
-                            ["13:25", "Paris", "CDG", "aeroflot", "A2513", "B737", "Boeing 737-800", "checkin", "airfrance"],
-                            ["13:35", "Moscow", "SVO", "aeroflot", "A4720", "B700", "Boeing 700-333", "checkin", "-"],
-                            ["13:45", "Geneva", "GVA", "swiss", "S5037", "A319", "Airbus 319", "checkin", "-"],
-                            ["13:55", "Paris", "CDG", "airfrance", "A3750", "B700", "Boeing 700-333", "checkin", "-"],
-                            ["14:05", "Barcelona", "BCN", "aeroflot", "A7816", "B333", "Boeing 333-600", "checkin", "-"],
-                            ["14:15", "Berlin", "TXL", "klm", "K4501", "B700", "Boeing 700-333", "delayed", "-"],
-                            ["14:25", "Rom", "CIA", "alitalia", "A1315", "A319", "Airbus 319", "cancelled", "-"],
-                            ["14:35", "Paris", "CDG", "aeroflot", "A2513", "B737", "Boeing 737-800", "delayed", "airfrance"],
-                            ["14:45", "Moscow", "SVO", "aeroflot", "A4720", "B700", "Boeing 700-333", "checkin", "-"],
-                            ["13:45", "Geneva", "GVA", "klm", "K5037", "A319", "Airbus 319", "checkin", "-"],
-                            ["13:55", "Paris", "CDG", "airfrance", "A3750", "B700", "Boeing 700-333", "checkin", "-"],
-                            ["14:05", "Barcelona", "BCN", "aeroflot", "A7816", "B333", "Boeing 333-600", "delayed", "-"],
-                            ["14:15", "Berlin", "TXL", "klm", "K4501", "B700", "Boeing 700-333", "delayed", "-"],
-                            ["14:25", "Rom", "CIA", "alitalia", "A1315", "A319", "Airbus 319", "cancelled", "-"],
-                            ["14:35", "Paris", "CDG", "aeroflot", "A2513", "B737", "Boeing 737-800", "delayed", "airfrance"],
-                            ["14:45", "Moscow", "SVO", "aeroflot", "A4720", "B700", "Boeing 700-333", "delayed", "-"],
-                            ["13:55", "Paris", "CDG", "airfrance", "A3750", "B700", "Boeing 700-333", "checkin", "-"],
-                            ["14:05", "Barcelona", "BCN", "aeroflot", "A7816", "B333", "Boeing 333-600", "delayed", "-"],
-                            ["14:15", "Berlin", "TXL", "klm", "K4501", "B700", "Boeing 700-333", "delayed", "-"],
-                            ["14:25", "Rom", "CIA", "alitalia", "A1315", "A319", "Airbus 319", "cancelled", "-"],
-                            ["14:35", "Paris", "CDG", "aeroflot", "A2513", "B737", "Boeing 737-800", "delayed", "airfrance"],
-                            ["14:45", "Moscow", "SVO", "aeroflot", "A4720", "B700", "Boeing 700-333", "delayed", "-"]
+                            ["13:05","Barcelona","BCN","aeroflot","A7816","B333","Boeing 333-600","checkin","-"],
+                            ["13:15","Rom","CIA","alitalia","A1315","A319","Airbus 319","departed","-"],
+                            ["13:45","Moscow","SVO","aeroflot","A4720","B700","Boeing 700-333","checkin","-"],
+                            ["14:35","Geneva","GVA","swiss","S5037","A319","Airbus 319","checkin","-"],
+                            ["14:45","Paris","CDG","aeroflot","A2513","B737","Boeing 737-800","delayed","airfrance"],
+                            ["14:55","Barcelona","BCN","aeroflot","A7816","B333","Boeing 333-600","departed","-"],
+                            ["15:25","Rom","CIA","alitalia","A1315","A319","Airbus 319","cancelled","-"],
+                            ["15:35","Paris","CDG","aeroflot","A2513","B737","Boeing 737-800","checkin","airfrance"],
+                            ["16:15","Berlin","TXL","klm","K4501","B700","Boeing 700-333","delayed","-"],
+                            ["16:25","Moscow","SVO","aeroflot","A4720","B700","Boeing 700-333","delayed","-"],
+                            ["16:35","Berlin","TXL","klm","K4501","B700","Boeing 700-333","departed","-"],
+                            ["16:45","Moscow","SVO","aeroflot","A4720","B700","Boeing 700-333","delayed","-"],
+                            ["16:55","Paris","CDG","airfrance","A3750","B700","Boeing 700-333","checkin","-"],
+                            ["17:25","Rom","CIA","alitalia","A1315","A319","Airbus 319","cancelled","-"],
+                            ["17:45","Paris","CDG","airfrance","A3750","B700","Boeing 700-333","inair","aeroflot"],
+                            ["18:05","Barcelona","BCN","aeroflot","A7816","B333","Boeing 333-600","delayed","-"],
+                            ["18:25","Rom","CIA","alitalia","A1315","A319","Airbus 319","cancelled","-"],
+                            ["18:30","Barcelona","BCN","aeroflot","A7816","B333","Boeing 333-600","delayed","-"],
+                            ["18:35","Moscow","SVO","aeroflot","A4720","B700","Boeing 700-333","checkin","-"],
+                            ["18:55","Paris","CDG","airfrance","A3750","B700","Boeing 700-333","checkin","-"],
+                            ["19:15","Paris","CDG","aeroflot","A2513","B737","Boeing 737-800","delayed","airfrance"],
+                            ["19:25","Berlin","TXL","klm","K4501","B700","Boeing 700-333","delayed","-"],
+                            ["19:35","Paris","CDG","airfrance","A3750","B700","Boeing 700-333","checkin","-"],
+                            ["20:05","Geneva","GVA","swiss","S5037","A319","Airbus 319","inair","klm"],
+                            ["20:15","Geneva","GVA","klm","K5037","A319","Airbus 319","checkin","-"],
+                            ["20:25","Berlin","TXL","klm","K4501","B700","Boeing 700-333","delayed","-"],
+                            ["20:35","Paris","CDG","aeroflot","A2513","B737","Boeing 737-800","delayed","airfrance"]
                         ];
                         $dataAttr = ['time','city', 'airport', 'airline', 'flight', 'model', 'plane', 'status', 'extra', 'url'];
                         $cellClass = "flight__tcell flight__td";
@@ -207,35 +206,6 @@
             </div>
 
             <div class="flight arrivals">
-                <div class="flight__table flight__table--header">
-                    <div class="flight__tr">
-                        <div class="flight__tcell flight__th flight__tcell--time">
-                            <span class="flight__content">Time</span>
-                        </div>
-                        <div class="flight__tcell flight__th flight__tcell--city">
-                            <span class="flight__content" title-short>Dest.</span>
-                            <span class="flight__content" title-wide>Destination</span>
-                        </div>
-                        <div class="flight__tcell flight__th flight__tcell--airline">
-                            <span class="flight__content" title-short>Airl.</span>
-                            <span class="flight__content" title-wide>Airline</span>
-                        </div>
-                        <div class="flight__tcell flight__th flight__tcell--flight">
-                            <span class="flight__content">Flight</span>
-                        </div>
-                        <div class="flight__tcell flight__th flight__tcell--plane">
-                            <span class="flight__content" title-short>Airp.</span>
-                            <span class="flight__content" title-wide>Airplane</span>
-                        </div>
-                        <div class="flight__tcell flight__th flight__tcell--status">
-                            <span class="flight__content">Status</span>
-                        </div>
-                        <div class="flight__tcell flight__th flight__tcell--extra">
-                            <span class="flight__content" title-short>Ext.</span>
-                            <span class="flight__content" title-wide>Extra</span>
-                        </div>
-                    </div>
-                </div>
                 <div class="flight__table flight__table--body">
 
                     <?php
@@ -258,7 +228,7 @@
                             "arrived" => "Arrived",
                             "delayed" => "Delayed"
                         ];
-                        $row = [
+                        $rowarr = [
                             ["12:25", "Geneva", "GVA", "swiss", "S5037", "A319", "Airbus 319", "inair", "klm"],
                             ["12:45", "Paris", "CDG", "airfrance", "A3750", "B700", "Boeing 700-333", "inair", "aeroflot"],
                             ["12:55", "Barcelona", "BCN", "aeroflot", "A7816", "B333", "Boeing 333-600", "departed", "-"],
@@ -272,29 +242,15 @@
                             ["14:15", "Berlin", "TXL", "klm", "K4501", "B700", "Boeing 700-333", "delayed", "-"],
                             ["14:25", "Rom", "CIA", "alitalia", "A1315", "A319", "Airbus 319", "cancelled", "-"],
                             ["14:35", "Paris", "CDG", "aeroflot", "A2513", "B737", "Boeing 737-800", "delayed", "airfrance"],
-                            ["14:45", "Moscow", "SVO", "aeroflot", "A4720", "B700", "Boeing 700-333", "checkin", "-"],
-                            ["13:45", "Geneva", "GVA", "klm", "K5037", "A319", "Airbus 319", "checkin", "-"],
-                            ["13:55", "Paris", "CDG", "airfrance", "A3750", "B700", "Boeing 700-333", "checkin", "-"],
-                            ["14:05", "Barcelona", "BCN", "aeroflot", "A7816", "B333", "Boeing 333-600", "delayed", "-"],
-                            ["14:15", "Berlin", "TXL", "klm", "K4501", "B700", "Boeing 700-333", "delayed", "-"],
-                            ["14:25", "Rom", "CIA", "alitalia", "A1315", "A319", "Airbus 319", "cancelled", "-"],
-                            ["14:35", "Paris", "CDG", "aeroflot", "A2513", "B737", "Boeing 737-800", "delayed", "airfrance"],
-                            ["14:45", "Moscow", "SVO", "aeroflot", "A4720", "B700", "Boeing 700-333", "delayed", "-"],
-                            ["13:55", "Paris", "CDG", "airfrance", "A3750", "B700", "Boeing 700-333", "checkin", "-"],
-                            ["14:05", "Barcelona", "BCN", "aeroflot", "A7816", "B333", "Boeing 333-600", "delayed", "-"],
-                            ["14:15", "Berlin", "TXL", "klm", "K4501", "B700", "Boeing 700-333", "delayed", "-"],
-                            ["14:25", "Rom", "CIA", "alitalia", "A1315", "A319", "Airbus 319", "cancelled", "-"],
-                            ["14:35", "Paris", "CDG", "aeroflot", "A2513", "B737", "Boeing 737-800", "delayed", "airfrance"],
-                            ["14:45", "Moscow", "SVO", "aeroflot", "A4720", "B700", "Boeing 700-333", "delayed", "-"]
+                            ["14:45", "Moscow", "SVO", "aeroflot", "A4720", "B700", "Boeing 700-333", "checkin", "-"]
                         ];
-                        $reversed = array_reverse($row);
                         $dataAttr = ['time','city', 'airport', 'airline', 'flight', 'model', 'plane', 'status', 'extra', 'url'];
                         $cellClass = "flight__tcell flight__td";
                         $contentClass = "flight__content";
                         $imgSize = 'width="20" height="20"';
                     ?>
 
-                    <?php foreach ($reversed as $key => $value) { ?>
+                    <?php foreach ($rowarr as $key => $value) { ?>
                         <div class="flight__tr">
 
                             <div class="<?php echo $cellClass . ' flight__tcell--' . $dataAttr[0]?>">
