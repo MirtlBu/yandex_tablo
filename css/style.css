@@ -96,23 +96,6 @@ h1, h2 {
     display: none;
 }
 
-/*.plane-departures:before, .plane-arrivals:before {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    left: -10px;
-    top: 50%;
-    margin-top: -6px;
-}
-
-.plane-departures:before {
-    background: url(../images/icon-plane-departures.png) 0 0 / 12px 12px no-repeat;
-}
-.plane-arrivals:before {
-    background: url(../images/icon-plane-arrivals.png) 0 0 / 12px 12px no-repeat;
-}*/
-
 #departures:checked~.departures, #arrivals:checked~.arrivals {
     display: block;
 }
@@ -233,7 +216,6 @@ h1, h2 {
     right: 0;
     margin: 0 auto;
     transform: translateY(-50%);
-    pointer-events: visible;
 }
 
 .popup--visible {
@@ -254,6 +236,7 @@ h1, h2 {
     box-sizing: border-box;
     position: relative;
     background: #ffffff;
+    pointer-events: auto;
 }
 
 .popup__tr {
