@@ -123,28 +123,30 @@
                             "checkin" => "Check-in",
                             "scheduled" => "Scheduled",
                             "departed" => "Departed",
-                            "inair" => "In Air",
+                            "inair" => "In air",
                             "cancelled" => "Cancelled",
                             "landed" => "Landed",
                             "arrived" => "Arrived",
-                            "delayed" => "Delayed"
+                            "delayed" => "Delayed",
+                            "gateclosed" => "Gate closed",
+                            "boardingsoon" => "Boarding soon"
                         ];
                         $row = [
                             ["13:05","Barcelona","BCN","aeroflot","A7816","B333","Boeing 333-600","checkin","-"],
-                            ["13:15","Rom","CIA","alitalia","A1315","A319","Airbus 319","departed","-"],
+                            ["13:15","Rom","CIA","alitalia","A1315","A319","Airbus 319","boardingsoon","-"],
                             ["13:45","Moscow","SVO","aeroflot","A4720","B700","Boeing 700-333","checkin","-"],
                             ["14:35","Geneva","GVA","swiss","S5037","A319","Airbus 319","checkin","-"],
-                            ["14:45","Paris","CDG","aeroflot","A2513","B737","Boeing 737-800","delayed","airfrance"],
-                            ["14:55","Barcelona","BCN","aeroflot","A7816","B333","Boeing 333-600","departed","-"],
-                            ["15:25","Rom","CIA","alitalia","A1315","A319","Airbus 319","cancelled","-"],
-                            ["15:35","Paris","CDG","aeroflot","A2513","B737","Boeing 737-800","checkin","airfrance"],
+                            ["14:45","Paris","CDG","aeroflot","A2513","B737","Boeing 737-800","boardingsoon","airfrance"],
+                            ["14:55","Barcelona","BCN","aeroflot","A7816","B333","Boeing 333-600","gateclosed","-"],
+                            ["15:25","Rom","CIA","alitalia","A1315","A319","Airbus 319","gateclosed","-"],
+                            ["15:35","Paris","CDG","aeroflot","A2513","B737","Boeing 737-800","gateclosed","airfrance"],
                             ["16:15","Berlin","TXL","klm","K4501","B700","Boeing 700-333","delayed","-"],
                             ["16:25","Moscow","SVO","aeroflot","A4720","B700","Boeing 700-333","delayed","-"],
                             ["16:35","Berlin","TXL","klm","K4501","B700","Boeing 700-333","departed","-"],
                             ["16:45","Moscow","SVO","aeroflot","A4720","B700","Boeing 700-333","delayed","-"],
                             ["16:55","Paris","CDG","airfrance","A3750","B700","Boeing 700-333","checkin","-"],
                             ["17:25","Rom","CIA","alitalia","A1315","A319","Airbus 319","cancelled","-"],
-                            ["17:45","Paris","CDG","airfrance","A3750","B700","Boeing 700-333","inair","aeroflot"],
+                            ["17:45","Paris","CDG","airfrance","A3750","B700","Boeing 700-333","arrived","aeroflot"],
                             ["18:05","Barcelona","BCN","aeroflot","A7816","B333","Boeing 333-600","delayed","-"],
                             ["18:25","Rom","CIA","alitalia","A1315","A319","Airbus 319","cancelled","-"],
                             ["18:30","Barcelona","BCN","aeroflot","A7816","B333","Boeing 333-600","delayed","-"],
@@ -153,7 +155,7 @@
                             ["19:15","Paris","CDG","aeroflot","A2513","B737","Boeing 737-800","delayed","airfrance"],
                             ["19:25","Berlin","TXL","klm","K4501","B700","Boeing 700-333","delayed","-"],
                             ["19:35","Paris","CDG","airfrance","A3750","B700","Boeing 700-333","checkin","-"],
-                            ["20:05","Geneva","GVA","swiss","S5037","A319","Airbus 319","inair","klm"],
+                            ["20:05","Geneva","GVA","swiss","S5037","A319","Airbus 319","cancelled","klm"],
                             ["20:15","Geneva","GVA","klm","K5037","A319","Airbus 319","checkin","-"],
                             ["20:25","Berlin","TXL","klm","K4501","B700","Boeing 700-333","delayed","-"],
                             ["20:35","Paris","CDG","aeroflot","A2513","B737","Boeing 737-800","delayed","airfrance"]
@@ -209,40 +211,21 @@
                 <div class="flight__table flight__table--body">
 
                     <?php
-                        $airlines = [
-                            "klm" => "KLM",
-                            "airfrance" => "Air France",
-                            "aeroflot" => "Aeroflot",
-                            "airbaltic" => "airBaltic",
-                            "alitalia" => "Alitalia",
-                            "lufthansa" => "Lufthansa",
-                            "swiss" => "SWISS"
-                        ];
-                        $status = [
-                            "checkin" => "Check-in",
-                            "scheduled" => "Scheduled",
-                            "departed" => "Departed",
-                            "inair" => "In Air",
-                            "cancelled" => "Cancelled",
-                            "landed" => "Landed",
-                            "arrived" => "Arrived",
-                            "delayed" => "Delayed"
-                        ];
                         $rowarr = [
                             ["12:25", "Geneva", "GVA", "swiss", "S5037", "A319", "Airbus 319", "inair", "klm"],
                             ["12:45", "Paris", "CDG", "airfrance", "A3750", "B700", "Boeing 700-333", "inair", "aeroflot"],
-                            ["12:55", "Barcelona", "BCN", "aeroflot", "A7816", "B333", "Boeing 333-600", "departed", "-"],
-                            ["13:05", "Berlin", "TXL", "klm", "K4501", "B700", "Boeing 700-333", "departed", "-"],
-                            ["13:15", "Rom", "CIA", "alitalia", "A1315", "A319", "Airbus 319", "departed", "-"],
-                            ["13:25", "Paris", "CDG", "aeroflot", "A2513", "B737", "Boeing 737-800", "checkin", "airfrance"],
-                            ["13:35", "Moscow", "SVO", "aeroflot", "A4720", "B700", "Boeing 700-333", "checkin", "-"],
-                            ["13:45", "Geneva", "GVA", "swiss", "S5037", "A319", "Airbus 319", "checkin", "-"],
-                            ["13:55", "Paris", "CDG", "airfrance", "A3750", "B700", "Boeing 700-333", "checkin", "-"],
-                            ["14:05", "Barcelona", "BCN", "aeroflot", "A7816", "B333", "Boeing 333-600", "checkin", "-"],
+                            ["12:55", "Barcelona", "BCN", "aeroflot", "A7816", "B333", "Boeing 333-600", "scheduled", "-"],
+                            ["13:05", "Berlin", "TXL", "klm", "K4501", "B700", "Boeing 700-333", "scheduled", "-"],
+                            ["13:15", "Rom", "CIA", "alitalia", "A1315", "A319", "Airbus 319", "scheduled", "-"],
+                            ["13:25", "Paris", "CDG", "aeroflot", "A2513", "B737", "Boeing 737-800", "cancelled", "airfrance"],
+                            ["13:35", "Moscow", "SVO", "aeroflot", "A4720", "B700", "Boeing 700-333", "scheduled", "-"],
+                            ["13:45", "Geneva", "GVA", "swiss", "S5037", "A319", "Airbus 319", "inair", "-"],
+                            ["13:55", "Paris", "CDG", "airfrance", "A3750", "B700", "Boeing 700-333", "landed", "-"],
+                            ["14:05", "Barcelona", "BCN", "aeroflot", "A7816", "B333", "Boeing 333-600", "landed", "-"],
                             ["14:15", "Berlin", "TXL", "klm", "K4501", "B700", "Boeing 700-333", "delayed", "-"],
                             ["14:25", "Rom", "CIA", "alitalia", "A1315", "A319", "Airbus 319", "cancelled", "-"],
                             ["14:35", "Paris", "CDG", "aeroflot", "A2513", "B737", "Boeing 737-800", "delayed", "airfrance"],
-                            ["14:45", "Moscow", "SVO", "aeroflot", "A4720", "B700", "Boeing 700-333", "checkin", "-"]
+                            ["14:45", "Moscow", "SVO", "aeroflot", "A4720", "B700", "Boeing 700-333", "scheduled", "-"]
                         ];
                         $dataAttr = ['time','city', 'airport', 'airline', 'flight', 'model', 'plane', 'status', 'extra', 'url'];
                         $cellClass = "flight__tcell flight__td";
